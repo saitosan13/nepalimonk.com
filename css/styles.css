@@ -78,7 +78,7 @@ main {
     padding: 20px;
 }
 
-.intro, .about, .blog, .gallery, .services, .team, .contact {
+.intro, .about, .blog, .gallery, .services, .team, .contact, .hidden {
     margin-bottom: 40px;
 }
 
@@ -127,4 +127,42 @@ footer {
     text-align: center;
     padding: 10px;
     background: #222;
+}
+
+/* Hidden section styles */
+.hidden {
+    background: #333;
+    color: #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.hidden-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.hidden #reveal-button {
+    padding: 10px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.hidden #reveal-button:hover {
+    background-color: #e64a19;
+}
+
+.hidden-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.mystery-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
 }
