@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-music');
     audio.volume = 0.2; // Adjust volume as needed
 
-    // Example of adding magical effects to navigation links
+    const chillingSound = document.getElementById('chilling-sound');
+
+    // Example of adding magical effects
     const navLinks = document.querySelectorAll('nav ul li a');
 
     navLinks.forEach(link => {
@@ -21,5 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     title.addEventListener('mouseout', () => {
         title.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-});
+   
