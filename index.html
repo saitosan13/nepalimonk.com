@@ -10,43 +10,33 @@
 <body>
     <div class="overlay"></div>
     <header>
+        <img src="images/logo.png" alt="NepaliMonk Logo" class="logo">
         <h1 class="title">NepaliMonk</h1>
         <p class="subtitle">Where Dreams Meet Reality</p>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="intro">
+        <section id="home" class="intro">
             <h2>Welcome to a world where the surreal meets the real.</h2>
             <p>Explore hauntingly beautiful stories, imagery, and experiences.</p>
         </section>
-        <section class="gallery">
-            <h2>Gallery</h2>
-            <!-- Add images with surreal effects here -->
-            <img src="images/surreal1.jpg" alt="Surreal Image 1">
-            <img src="images/surreal2.jpg" alt="Surreal Image 2">
-            <img src="images/surreal3.jpg" alt="Surreal Image 3">
-            <img src="images/surreal4.jpg" alt="Surreal Image 4">
-        </section>
-        <section class="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-form">
-                <form action="#" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <button type="submit">Send</button>
-                </form>
+        <section id="gallery" class="gallery">
+            <div class="gallery-item">
+                <img src="images/Project1.jpg" alt="Project 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/Project2.jpg" alt="Project 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/Project3.jpg" alt="Project 3">
             </div>
         </section>
     </main>
