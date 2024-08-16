@@ -1,0 +1,33 @@
+# Node.js dependencies (if you're using Node.js and Express)
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.swp
+
+# Environment variables (if you're using any sensitive configuration)
+.env
+
+# Build output (if you later introduce a build step)
+dist/
+build/
+
+# IDE settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Audio files (optional, if you want to host them elsewhere)
+audio/*.mp3
+
+# GitHub-specific files (optional)
+.github/
