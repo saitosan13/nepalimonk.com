@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-music');
     audio.volume = 0.2; // Adjust volume as needed
 
-    const chillingSound = document.getElementById('chilling-sound');
-
     // Example of adding magical effects
     const navLinks = document.querySelectorAll('nav ul li a');
 
@@ -25,17 +23,27 @@ document.addEventListener('DOMContentLoaded', () => {
         title.style.transform = 'rotateX(0deg) rotateY(0deg)';
     });
 
-    // Reveal hidden content
-    const revealButton = document.getElementById('reveal-button');
-    const secretContent = document.getElementById('secret-content');
+    // Ensure background music controls are present
+    const music = document.getElementById('background-music');
+    music.volume = 0.5;
 
-    revealButton.addEventListener('click', () => {
-        secretContent.style.display = 'block';
+    // Add event listeners to all links for a smooth transition effect
+    const links = document.querySelectorAll('nav ul li a');
+    links.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            link.style.transition = 'color 0.3s ease';
+            link.style.color = '#ffb3b3';
+        });
+        link.addEventListener('mouseout', () => {
+            link.style.color = '#e0e0e0';
+        });
     });
 
-    // Add chilling sound on hover
-    const hauntingImage = document.querySelector('.haunting-image');
-    hauntingImage.addEventListener('mouseover', () => {
-        chillingSound.play();
+    // Contact form submission (mockup)
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for reaching out! We will get back to you soon.');
+        contactForm.reset();
     });
 });
