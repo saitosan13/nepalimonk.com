@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('background-music');
     audio.volume = 0.2; // Adjust volume as needed
 
-    // Example of adding magical effects
+    // Example of adding magical effects to navigation links
     const navLinks = document.querySelectorAll('nav ul li a');
 
     navLinks.forEach(link => {
