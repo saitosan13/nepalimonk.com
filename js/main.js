@@ -23,4 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     title.addEventListener('mouseout', () => {
         title.style.transform = 'rotateX(0deg) rotateY(0deg)';
-   
+    });
+
+    // Reveal hidden content
+    const revealButton = document.getElementById('reveal-button');
+    const secretContent = document.getElementById('secret-content');
+
+    revealButton.addEventListener('click', () => {
+        secretContent.style.display = 'block';
+    });
+
+    // Add chilling sound on hover
+    const hauntingImage = document.querySelector('.haunting-image');
+    hauntingImage.addEventListener('mouseover', () => {
+        chillingSound.play();
+    });
+});
