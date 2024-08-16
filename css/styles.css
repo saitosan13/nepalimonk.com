@@ -1,168 +1,170 @@
-/* Reset and global styles */
+/* General Styles */
 body {
-    margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background: #000;
-    color: #eee;
+    color: #f0f0f0;
+    background-color: #1c1c1c;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden;
 }
 
+/* Header Styles */
 header {
     position: relative;
     text-align: center;
     padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
 }
 
 .floating-container {
     position: relative;
-    display: inline-block;
 }
 
 .title {
     font-family: 'Cinzel', serif;
     font-size: 3em;
-    color: #fff;
     margin: 0;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.5s ease, color 0.5s ease;
+    transition: transform 0.5s ease;
+    color: #dcdcdc;
 }
 
 .haunting-image {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    transition: transform 0.5s ease;
     width: 2in;
     height: 2in;
-    display: none;
     object-fit: cover;
-    transition: opacity 0.5s ease;
-}
-
-.title:hover ~ .haunting-image {
-    display: block;
-    opacity: 1;
-}
-
-.title.clicked {
-    color: #ff0000; /* Example color change on click */
-}
-
-.subtitle {
-    font-size: 1.5em;
-    margin: 10px 0;
+    border-radius: 50%;
+    opacity: 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: #eee;
     text-decoration: none;
+    color: #e0e0e0;
+    font-size: 1.2em;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #ff00ff;
-    transform: scale(1.1);
+    color: #ffb3b3;
+    transform: translateY(-3px);
 }
 
+/* Main Section Styles */
 main {
     padding: 20px;
 }
 
-.intro, .about, .blog, .gallery, .services, .team, .contact, .hidden {
+.intro, .about, .blog, .gallery, .contact {
     margin-bottom: 40px;
 }
 
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #ffb3b3;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff9999;
+}
+
+/* Gallery Styles */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
 }
 
 .gallery-item {
     width: 100%;
     height: auto;
+    border-radius: 5px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.contact form {
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Form Styles */
+form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-.contact label {
-    margin-top: 10px;
+form label {
+    font-weight: bold;
 }
 
-.contact input, .contact textarea {
-    margin-bottom: 10px;
+form input, form textarea {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    color: #f0f0f0;
 }
 
-.contact button {
+form button {
     padding: 10px;
-    background-color: #007bff;
     border: none;
-    border-radius: 4px;
-    color: #fff;
+    background-color: #ffb3b3;
+    color: #333;
+    border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.contact button:hover {
-    background-color: #0056b3;
+form button:hover {
+    background-color: #ff9999;
 }
 
+/* Footer Styles */
 footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     text-align: center;
     padding: 10px;
-    background: #222;
 }
 
-/* Hidden section styles */
-.hidden {
-    background: #333;
-    color: #ddd;
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
+/* Animations */
+@keyframes dissolve {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
 }
 
-.hidden-content {
-    display: none;
-    margin-top: 20px;
-}
-
-.hidden #reveal-button {
-    padding: 10px;
-    background-color: #ff5722;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-}
-
-.hidden #reveal-button:hover {
-    background-color: #e64a19;
-}
-
-.hidden-content {
-    display: none;
-    margin-top: 20px;
-}
-
-.mystery-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.title:hover ~ .haunting-image {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    animation: dissolve 1s forwards;
 }
