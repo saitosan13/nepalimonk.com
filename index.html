@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NepaliMonk | Surreal Experiences</title>
+    <title>Home | NepaliMonk</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Cinzel:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="overlay"></div>
     <header>
         <div class="floating-container">
             <h1 class="title">NepaliMonk</h1>
@@ -17,106 +16,66 @@
         <p class="subtitle">Where Dreams Meet Reality</p>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#team">Our Team</a></li>
-                <li><a href="#hidden">Hidden</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="team.html">Our Team</a></li>
+                <li><a href="hidden.html">Hidden</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home" class="intro">
-            <h2>Welcome to a world where the surreal meets the real.</h2>
-            <p>Explore hauntingly beautiful stories, imagery, and experiences.</p>
+        <section class="intro">
+            <h2>Welcome to NepaliMonk</h2>
+            <p>Immerse yourself in a world where dreams and reality intertwine, and every corner holds a new mystery.</p>
+            <a href="gallery.html" class="cta-button">Explore the Gallery</a>
         </section>
-
-        <section id="about" class="about">
+        <section class="about">
             <h2>About Us</h2>
-            <p>NepaliMonk is dedicated to blending surreal and haunting aesthetics with storytelling to create unique experiences.</p>
+            <p>We are dedicated to creating mesmerizing and surreal experiences that captivate and inspire.</p>
         </section>
-
-        <section id="blog" class="blog">
-            <h2>Blog</h2>
-            <article>
-                <h3>Surrealism in Modern Art</h3>
-                <p>Discover how surrealism influences contemporary art and media.</p>
+        <section class="blog">
+            <h2>Latest Blog Posts</h2>
+            <article class="blog-post">
+                <h3>Exploring Surrealism in Modern Media</h3>
+                <p>Discover the impact of surrealism on contemporary art and media.</p>
+                <a href="blog.html" class="cta-button">Read More</a>
             </article>
-            <article>
-                <h3>Haunting Melodies</h3>
-                <p>A deep dive into the haunting melodies that create immersive experiences.</p>
+            <article class="blog-post">
+                <h3>The Art of Haunting Music</h3>
+                <p>Uncover the secrets behind creating music that evokes a haunting atmosphere.</p>
+                <a href="blog.html" class="cta-button">Read More</a>
             </article>
         </section>
-
-        <section id="gallery" class="gallery">
+        <section class="gallery">
             <h2>Gallery</h2>
             <div class="gallery-grid">
                 <img src="images/Project1.jpg" alt="Project 1" class="gallery-item">
                 <img src="images/Project2.jpg" alt="Project 2" class="gallery-item">
-                <img src="images/Project3.jpg" alt="Project 3" class="gallery-item">
                 <img src="images/cover.jpg" alt="Cover" class="gallery-item">
+                <img src="images/Project3.jpg" alt="Project 3" class="gallery-item">
             </div>
         </section>
-
-        <section id="services" class="services">
-            <h2>Our Services</h2>
-            <p>Explore the wide range of services we offer to enhance your experience.</p>
-        </section>
-
-        <section id="team" class="team">
-            <h2>Meet the Team</h2>
-            <div class="team-members">
-                <div class="team-member">
-                    <img src="images/team1.jpg" alt="Team Member 1">
-                    <h3>John Doe</h3>
-                    <p>Creative Director</p>
-                </div>
-                <div class="team-member">
-                    <img src="images/team2.jpg" alt="Team Member 2">
-                    <h3>Jane Smith</h3>
-                    <p>Lead Designer</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
+        <section class="contact">
             <h2>Contact Us</h2>
-            <form action="https://formspree.io/f/my-form-id" method="POST">
+            <form id="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-                
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                
-                <button type="submit">Send</button>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
-        </section>
-
-        <!-- Hidden section for added mystery -->
-        <section id="hidden" class="hidden">
-            <h2>The Hidden Realm</h2>
-            <p>Uncover the secrets that lie beneath the surface. This realm holds mysteries that are only revealed to the most persistent seekers.</p>
-            <div class="hidden-content">
-                <p>Click the button below to unveil a part of the mystery.</p>
-                <button id="reveal-button">Reveal</button>
-                <div id="secret-content" class="hidden-content">
-                    <p>Congratulations! You've uncovered a hidden aspect of the website. The more you explore, the more you'll find.</p>
-                    <img src="images/mystery-image.jpg" alt="Mystery Image" class="mystery-image">
-                </div>
-            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 NepaliMonk. All rights reserved.</p>
     </footer>
     <audio id="background-music" src="audio/background-music.mp3" autoplay loop></audio>
-    <audio id="chilling-sound" src="audio/chilling-sound.mp3"></audio>
     <script src="js/main.js"></script>
 </body>
 </html>
