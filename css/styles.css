@@ -89,6 +89,18 @@ nav ul li a.clicked {
 .gallery img:hover {
     transform: scale(1.05);
 }
+/* Other CSS rules */
+
+/* Logo Styling */
+.logo {
+    width: 1in;  /* 1 inch width */
+    height: 1in; /* 1 inch height */
+    object-fit: contain; /* Ensures the logo scales proportionally */
+    display: block; /* Ensure it’s displayed correctly */
+    margin: 0 auto; /* Center the logo horizontally if needed */
+}
+
+/* Other CSS rules */
 
 /* Footer */
 footer {
