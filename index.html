@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NepaliMonk</title>
+    <title>NepaliMonk | Surreal Experiences</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Cinzel:wght@400;700&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
+    <div class="overlay"></div>
+    <header>
+        <h1 class="title">NepaliMonk</h1>
+        <p class="subtitle">Where Dreams Meet Reality</p>
+        <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -17,26 +21,20 @@
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-
-        <header class="main-header">
-            <h1>NepaliMonk</h1>
-            <p>A mystical journey into surrealism</p>
-        </header>
-
-        <audio controls autoplay loop>
-            <source src="audio/background-music.mp3" type="audio/mp3">
-            Your browser does not support the audio element.
-        </audio>
-
-        <section class="content">
-            <p>Welcome to NepaliMonk, where dreams meet reality and the surreal becomes tangible.</p>
+    </header>
+    <main>
+        <section class="intro">
+            <h2>Welcome to a world where the surreal meets the real.</h2>
+            <p>Explore hauntingly beautiful stories, imagery, and experiences.</p>
         </section>
-
-        <footer class="footer">
-            <p>&copy; 2024 NepaliMonk. All rights reserved.</p>
-        </footer>
-    </div>
+        <section class="gallery">
+            <!-- Add images with surreal effects here -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 NepaliMonk. All rights reserved.</p>
+    </footer>
+    <audio id="background-music" src="audio/background-music.mp3" autoplay loop></audio>
     <script src="js/main.js"></script>
 </body>
 </html>
-
