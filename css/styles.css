@@ -1,111 +1,130 @@
-/* Basic Reset and Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Reset and global styles */
 body {
+    margin: 0;
     font-family: 'Libre Baskerville', serif;
-    background: url('../images/cover.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
+    background: #000;
+    color: #eee;
     overflow-x: hidden;
 }
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: -1;
-}
-h1, h2, p {
-    color: #fff;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+
+header {
+    position: relative;
+    text-align: center;
     padding: 20px;
 }
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: #ddd;
-    font-size: 1.2rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-nav ul li a:hover {
-    color: #ffccff; /* Color for hover effect */
-}
-nav ul li a.clicked {
-    color: #ffccff; /* Light purple or any color for the magic effect */
-    transform: scale(1.1); /* Slightly enlarge the link */
+
+.floating-container {
+    position: relative;
+    display: inline-block;
 }
 
-/* Title with 3D effect */
 .title {
     font-family: 'Cinzel', serif;
-    font-size: 3rem;
-    text-align: center;
-    margin: 50px 0;
-    transition: transform 0.3s ease;
+    font-size: 3em;
+    color: #fff;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease, color 0.5s ease;
 }
 
-/* Subtitle */
+.haunting-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2in;
+    height: 2in;
+    display: none;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.title:hover ~ .haunting-image {
+    display: block;
+    opacity: 1;
+}
+
+.title.clicked {
+    color: #ff0000; /* Example color change on click */
+}
+
 .subtitle {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+    font-size: 1.5em;
+    margin: 10px 0;
 }
 
-/* Intro Section */
-.intro {
-    text-align: center;
-    padding: 50px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Gallery Section */
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #eee;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff00ff;
+    transform: scale(1.1);
+}
+
+main {
     padding: 20px;
 }
-.gallery img {
+
+.intro, .about, .blog, .gallery, .services, .team, .contact {
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gallery-item {
     width: 100%;
-    max-width: 300px;
     height: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-.gallery img:hover {
-    transform: scale(1.05);
-}
-/* Other CSS rules */
-
-/* Logo Styling */
-.logo {
-    width: 1in;  /* 1 inch width */
-    height: 1in; /* 1 inch height */
-    object-fit: contain; /* Ensures the logo scales proportionally */
-    display: block; /* Ensure it’s displayed correctly */
-    margin: 0 auto; /* Center the logo horizontally if needed */
+    object-fit: cover;
 }
 
-/* Other CSS rules */
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
 
-/* Footer */
+.contact label {
+    margin-top: 10px;
+}
+
+.contact input, .contact textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact button {
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
 footer {
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.7);
-    border-top: 1px solid #333;
+    padding: 10px;
+    background: #222;
 }
