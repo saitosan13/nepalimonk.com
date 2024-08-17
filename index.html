@@ -72,6 +72,9 @@
     </script>
 </head>
 <body>
+    <!-- Particles.js container -->
+    <div id="particles-js"></div>
+
     <header>
         <h1 class="title">Welcome to Nepalimonk</h1>
         <nav>
@@ -122,100 +125,6 @@
                 <button type="submit">Send Message</button>
             </form>
         </section>
-
-        <!-- GSAP and ScrollMagic Configuration -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const controller = new ScrollMagic.Controller();
-
-                document.querySelectorAll('.reveal').forEach((element) => {
-                    new ScrollMagic.Scene({
-                        triggerElement: element,
-                        triggerHook: 0.9,
-                        reverse: false
-                    })
-                    .setClassToggle(element, 'reveal-active')
-                    .addTo(controller);
-                });
-
-                // Floating text animation using Anime.js
-                anime({
-                    targets: '.floating-text',
-                    translateY: [-10, 0],
-                    easing: 'easeInOutSine',
-                    direction: 'alternate',
-                    loop: true,
-                    duration: 2000
-                });
-
-                // Typed.js for dynamic typing effect
-                new Typed('.floating-text', {
-                    strings: ["Where reality bends", "Dreams come to life", "Lose yourself in the art"],
-                    typeSpeed: 60,
-                    backSpeed: 40,
-                    backDelay: 1500,
-                    loop: true
-                });
-
-                // Particles.js configuration for a dreamlike background
-                particlesJS("particles-js", {
-                    particles: {
-                        number: {
-                            value: 80,
-                            density: {
-                                enable: true,
-                                value_area: 800
-                            }
-                        },
-                        color: {
-                            value: "#ffffff"
-                        },
-                        shape: {
-                            type: "circle",
-                            stroke: {
-                                width: 0,
-                                color: "#000000"
-                            }
-                        },
-                        opacity: {
-                            value: 0.5,
-                            random: false
-                        },
-                        size: {
-                            value: 3,
-                            random: true
-                        },
-                        line_linked: {
-                            enable: true,
-                            distance: 150,
-                            color: "#ffffff",
-                            opacity: 0.4,
-                            width: 1
-                        },
-                        move: {
-                            enable: true,
-                            speed: 6,
-                            out_mode: "out"
-                        }
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: {
-                            onhover: {
-                                enable: true,
-                                mode: "repulse"
-                            },
-                            onclick: {
-                                enable: true,
-                                mode: "push"
-                            },
-                            resize: true
-                        }
-                    },
-                    retina_detect: true
-                });
-            });
-        </script>
     </main>
 
     <footer>
@@ -227,5 +136,102 @@
     </footer>
 
     <script src="scripts.js"></script>
+
+    <!-- Initialize Particles.js -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            particlesJS("particles-js", {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: "#ffffff"
+                    },
+                    shape: {
+                        type: "circle",
+                        stroke: {
+                            width: 0,
+                            color: "#000000"
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false
+                    },
+                    size: {
+                        value: 3,
+                        random: true
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#ffffff",
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        out_mode: "out"
+                    }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: "repulse"
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: "push"
+                        },
+                        resize: true
+                    }
+                },
+                retina_detect: true
+            });
+        });
+    </script>
+
+    <!-- GSAP and ScrollMagic Configuration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const controller = new ScrollMagic.Controller();
+
+            document.querySelectorAll('.reveal').forEach((element) => {
+                new ScrollMagic.Scene({
+                    triggerElement: element,
+                    triggerHook: 0.9,
+                    reverse: false
+                })
+                .setClassToggle(element, 'reveal-active')
+                .addTo(controller);
+            });
+
+            anime({
+                targets: '.floating-text',
+                translateY: [-10, 0],
+                easing: 'easeInOutSine',
+                direction: 'alternate',
+                loop: true,
+                duration: 2000
+            });
+
+            const options = {
+                strings: ["Where reality bends", "Dreams come to life", "Lose yourself in the art"],
+                typeSpeed: 60,
+                backSpeed: 40,
+                backDelay: 1500,
+                loop: true
+            };
+            new Typed('.floating-text', options);
+        });
+    </script>
 </body>
 </html>
