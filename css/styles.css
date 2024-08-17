@@ -33,6 +33,35 @@ header {
     color: #f4f4f4;
     animation: float 5s ease-in-out infinite;
 }
+/* Gallery Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2) sepia(0.3);
+}
+
+/* Homepage Background */
+body {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+    ), url('images/Project4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+}
 
 .subtitle {
     font-size: 1.5rem;
