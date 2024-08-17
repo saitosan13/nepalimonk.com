@@ -73,6 +73,38 @@ document.querySelectorAll('.gallery-item').forEach(item => {
     });
 });
 
+// Gallery Click Event for Lightbox
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+        openLightbox(item.src);
+    });
+});
+
+function openLightbox(src) {
+    const lightbox = document.createElement('div');
+    lightbox.classList.add('lightbox');
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="${src}" alt="Gallery Image">
+            <span class="close">&times;</span>
+        </div>
+    `;
+    document.body.appendChild(lightbox);
+
+    document.querySelector('.lightbox .close').addEventListener('click', () => {
+        document.body.removeChild(lightbox);
+    });
+}
+
+// Ensure Background Image Blends Smoothly
+window.addEventListener('load', () => {
+    gsap.to('body', {
+        duration: 3,
+        backgroundColor: "rgba(0, 0, 0, 0.8)",
+        ease: "power2.inOut"
+    });
+});
+
 // Scroll Animation using ScrollMagic
 const controller = new ScrollMagic.Controller();
 
