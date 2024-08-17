@@ -15,12 +15,12 @@
     <meta name="twitter:title" content="Nepalimonk - Premier Film Production in Kathmandu, Nepal">
     <meta name="twitter:description" content="Nepalimonk specializes in producing and directing high-quality, dreamlike, surrealistic, and intense film content in Kathmandu, Nepal.">
     <meta name="twitter:image" content="https://nepalimonk.com/images/twitter-image.jpg">
-    <meta name="robots" content="index, follow">
 
     <title>Nepalimonk - Premier Film Production in Kathmandu, Nepal</title>
     <link rel="canonical" href="https://nepalimonk.com">
     <link rel="icon" href="https://nepalimonk.com/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     
@@ -44,40 +44,6 @@
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/gh/VincentGarreau/particles.js/particles.min.js"></script>
-
-    <!-- Custom CSS for additional styling -->
-    <style>
-        body {
-            font-family: 'Playfair Display', serif;
-            background: #000; /* Dark background for a haunting atmosphere */
-            color: #fff; /* White text to stand out */
-            overflow-x: hidden;
-        }
-
-        .floating-text {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            animation: floatText 4s ease-in-out infinite;
-        }
-
-        @keyframes floatText {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-
-        /* Custom ScrollMagic & GSAP animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(100px);
-            transition: all 1s ease;
-        }
-
-        .reveal-active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -107,7 +73,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Nepalimonk</h1>
+        <h1 class="title">Welcome to Nepalimonk</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -163,7 +129,7 @@
                 const controller = new ScrollMagic.Controller();
 
                 document.querySelectorAll('.reveal').forEach((element) => {
-                    const scene = new ScrollMagic.Scene({
+                    new ScrollMagic.Scene({
                         triggerElement: element,
                         triggerHook: 0.9,
                         reverse: false
@@ -183,14 +149,13 @@
                 });
 
                 // Typed.js for dynamic typing effect
-                const options = {
+                new Typed('.floating-text', {
                     strings: ["Where reality bends", "Dreams come to life", "Lose yourself in the art"],
                     typeSpeed: 60,
                     backSpeed: 40,
                     backDelay: 1500,
                     loop: true
-                };
-                const typed = new Typed('.floating-text', options);
+                });
 
                 // Particles.js configuration for a dreamlike background
                 particlesJS("particles-js", {
@@ -214,23 +179,11 @@
                         },
                         opacity: {
                             value: 0.5,
-                            random: false,
-                            anim: {
-                                enable: false,
-                                speed: 1,
-                                opacity_min: 0.1,
-                                sync: false
-                            }
+                            random: false
                         },
                         size: {
                             value: 3,
-                            random: true,
-                            anim: {
-                                enable: false,
-                                speed: 40,
-                                size_min: 0.1,
-                                sync: false
-                            }
+                            random: true
                         },
                         line_linked: {
                             enable: true,
@@ -242,16 +195,7 @@
                         move: {
                             enable: true,
                             speed: 6,
-                            direction: "none",
-                            random: false,
-                            straight: false,
-                            out_mode: "out",
-                            bounce: false,
-                            attract: {
-                                enable: false,
-                                rotateX: 600,
-                                rotateY: 1200
-                            }
+                            out_mode: "out"
                         }
                     },
                     interactivity: {
@@ -266,31 +210,6 @@
                                 mode: "push"
                             },
                             resize: true
-                        },
-                        modes: {
-                            grab: {
-                                distance: 400,
-                                line_linked: {
-                                    opacity: 1
-                                }
-                            },
-                            bubble: {
-                                distance: 400,
-                                size: 40,
-                                duration: 2,
-                                opacity: 8,
-                                speed: 3
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4
-                            },
-                            push: {
-                                particles_nb: 4
-                            },
-                            remove: {
-                                particles_nb: 2
-                            }
                         }
                     },
                     retina_detect: true
