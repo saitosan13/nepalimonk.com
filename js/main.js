@@ -1,49 +1,136 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const audio = document.getElementById('background-music');
-    audio.volume = 0.2; // Adjust volume as needed
+// GSAP Animations
 
-    // Example of adding magical effects
-    const navLinks = document.querySelectorAll('nav ul li a');
+// Title Animation
+gsap.from(".title", {
+    duration: 3,
+    opacity: 0,
+    y: -30,
+    ease: "power2.out",
+    delay: 1,
+    onComplete: function() {
+        gsap.to(".title", {
+            duration: 3,
+            opacity: 1,
+            y: 0,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut"
+        });
+    }
+});
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            link.classList.add('clicked');
-            setTimeout(() => link.classList.remove('clicked'), 500);
+// Subtitle Animation with Typed.js
+new Typed('.subtitle', {
+    strings: [
+        "Where Dreams Meet Reality...",
+        "Explore the Surreal...",
+        "Dive into the Unknown...",
+        "Discover Hidden Mysteries..."
+    ],
+    typeSpeed: 60,
+    backSpeed: 30,
+    startDelay: 3000,
+    backDelay: 2000,
+    loop: true,
+    showCursor: false
+});
+
+// Image Animation
+gsap.from(".haunting-image", {
+    duration: 5,
+    opacity: 0,
+    scale: 1.1,
+    ease: "power3.out",
+    delay: 2,
+    onComplete: function() {
+        gsap.to(".haunting-image", {
+            duration: 5,
+            scale: 1.05,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
+        });
+    }
+});
+
+// Gallery Hover Effect
+document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('mouseover', () => {
+        gsap.to(item, {
+            duration: 1,
+            scale: 1.1,
+            filter: "brightness(1.4) sepia(0.5)",
+            ease: "power2.out"
         });
     });
-
-    // Example of 3D hover effect on the title
-    const title = document.querySelector('.title');
-    title.addEventListener('mouseover', () => {
-        title.style.transform = 'rotateX(10deg) rotateY(10deg)';
-    });
-
-    title.addEventListener('mouseout', () => {
-        title.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-
-    // Ensure background music controls are present
-    const music = document.getElementById('background-music');
-    music.volume = 0.5;
-
-    // Add event listeners to all links for a smooth transition effect
-    const links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => {
-        link.addEventListener('mouseover', () => {
-            link.style.transition = 'color 0.3s ease';
-            link.style.color = '#ffb3b3';
-        });
-        link.addEventListener('mouseout', () => {
-            link.style.color = '#e0e0e0';
+    item.addEventListener('mouseout', () => {
+        gsap.to(item, {
+            duration: 1,
+            scale: 1,
+            filter: "brightness(1) sepia(0)",
+            ease: "power2.in"
         });
     });
+});
 
-    // Contact form submission (mockup)
-    const contactForm = document.getElementById('contact-form');
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        alert('Thank you for reaching out! We will get back to you soon.');
-        contactForm.reset();
+// Scroll Animation using ScrollMagic
+const controller = new ScrollMagic.Controller();
+
+document.querySelectorAll('section').forEach((section, index) => {
+    const fadeInScene = new ScrollMagic.Scene({
+        triggerElement: section,
+        triggerHook: 0.9,
+        reverse: false
+    })
+    .setTween(gsap.from(section, {
+        opacity: 0,
+        y: 50,
+        duration: 2,
+        ease: "power2.out"
+    }))
+    .addTo(controller);
+});
+
+// Background Music Control
+const backgroundMusic = document.getElementById('background-music');
+backgroundMusic.volume = 0.5;
+backgroundMusic.play();
+
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        backgroundMusic.pause();
+    } else {
+        backgroundMusic.play();
+    }
+});
+
+// Otherworldly Heartwarming Melodies
+function fadeInMusic() {
+    gsap.to(backgroundMusic, {
+        volume: 0.7,
+        duration: 5,
+        ease: "power2.inOut"
     });
+}
+
+function fadeOutMusic() {
+    gsap.to(backgroundMusic, {
+        volume: 0.2,
+        duration: 5,
+        ease: "power2.inOut"
+    });
+}
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    if (scrollY > 300) {
+        fadeOutMusic();
+    } else {
+        fadeInMusic();
+    }
+});
+
+// Particle.js Initialization
+particlesJS.load('particles-js', 'particles.json', function() {
+    console.log('particles.js loaded - callback');
 });
