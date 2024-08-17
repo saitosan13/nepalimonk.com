@@ -38,32 +38,27 @@
     color: #fff;
     font-size: 30px;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.lightbox .close:hover {
-    color: #d4af37;
-    transform: scale(1.2);
 }
 
 /* Body Styling */
 body {
-    font-family: 'Libre Baskerville', serif;
-    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    background-color: #000; /* Dark background color */
+    color: #fff;
     overflow-x: hidden;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.8), 
-        rgba(0, 0, 0, 0.6)
-    ), url('images/Project4.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-image: url('images/background.jpg'); /* Background image */
+    background-size: cover; /* Cover the viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 /* Header Styling */
 header {
     text-align: center;
-    padding: 50px 0;
-    position: relative;
-    z-index: 10;
+    padding: 20px 0; /* Adjusted padding */
+    background: none; /* Ensure no background image for the header */
 }
 
 .title {
@@ -84,30 +79,15 @@ header {
 }
 
 .gallery-item {
-    width: 0.5in;
-    height: 0.5in;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-    filter: brightness(1.2) sepia(0.3);
-}
-
-/* Subtitle Styling */
-.subtitle {
-    font-size: 1.5rem;
-    color: #c4c4c4;
-    margin-top: 20px;
-    opacity: 0.8;
-    animation: fadeIn 3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 0.8; }
+    filter: brightness(1.2);
 }
 
 /* Floating Animation */
@@ -160,7 +140,7 @@ nav ul li a:hover {
 
 /* Main Content Styling */
 main {
-    padding: 50px 20px;
+    padding: 20px; /* Adjusted padding */
     text-align: center;
 }
 
@@ -211,4 +191,16 @@ footer ul li a {
     color: #d4af37;
     text-decoration: none;
     font-size: 0.9rem;
+}
+
+/* Custom ScrollMagic & GSAP Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 1s ease;
+}
+
+.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
 }
